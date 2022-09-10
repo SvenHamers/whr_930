@@ -929,7 +929,7 @@ def main():
 
 
     # Opening JSON file
-    f = open('/data/config.json')
+    f = open('/data/options.json')
     
     # returns JSON object as 
     # a dictionary
