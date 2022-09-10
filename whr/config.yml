@@ -1,5 +1,5 @@
 name: whr
-version: "0.0.2"
+version: "0.0.3"
 slug: whr
 description: whr
 url: "https://github.com/SvenHamers/whr_930"
@@ -16,9 +16,11 @@ options:
   username: "user"
   password: "password"
   ip: "home assistant ip adress"
+  usb_device: "/dev/ttyUSB0"
 schema:
   username: "str"
   password: "str"
   ip: "str"
+  usb_device: "str"
 
 image: "svenhamers1992/whr"

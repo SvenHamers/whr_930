@@ -12,6 +12,7 @@ import paho.mqtt.client as mqtt
 import time
 import sys
 import serial
+import json
 
 
 def debug_msg(message):
@@ -910,11 +911,19 @@ def main():
     debug_level = 0
     warning = False
 
+
+    # Opening JSON file
+    f = open('/data/config.json')
+    
+    # returns JSON object as 
+    # a dictionary
+    data = json.load(f)
+
     pending_commands = []
 
     """Connect to the MQTT broker"""
     mqttc = mqtt.Client("whr930")
-    mqttc.username_pw_set(username="myuser", password="mypass")
+    mqttc.username_pw_set(username=data["username"], password="password")
 
     """Define the mqtt callbacks"""
     mqttc.on_connect = on_connect
@@ -922,11 +931,11 @@ def main():
     mqttc.on_disconnect = on_disconnect
 
     """Connect to the MQTT server"""
-    mqttc.connect("myhost/ip", port=1883, keepalive=45)
+    mqttc.connect(data["ip"], port=1883, keepalive=45)
 
     """Open the serial port"""
     ser = serial.Serial(
-        port="/dev/ttyUSB0",
+        port=data["usb_device"],
         baudrate=9600,
         bytesize=serial.EIGHTBITS,
         parity=serial.PARITY_NONE,
