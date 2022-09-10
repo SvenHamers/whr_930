@@ -1,5 +1,5 @@
 name: whr
-version: "0.0.1"
+version: "0.0.2"
 slug: whr
 description: whr
 url: "https://github.com/SvenHamers/whr_930"
@@ -12,4 +12,13 @@ arch:
 init: false
 map:
   - share:rw
+options:
+  username: "user"
+  password: "password"
+  ip: "home assistant ip adress"
+schema:
+  username: "str"
+  password: "str"
+  ip: "str"
+
 image: "svenhamers1992/whr"
