@@ -22,5 +22,6 @@ schema:
   password: "str"
   ip: "str"
   usb_device: "str"
+usb: true
 
 image: "svenhamers1992/whr"
