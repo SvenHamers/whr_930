@@ -1,0 +1,15 @@
+name: whr
+version: "0.0.1"
+slug: whr
+description: whr
+url: "https://github.com/SvenHamers/whr_930"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+image: "svenhamers1992/whr"
