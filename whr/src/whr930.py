@@ -909,9 +909,9 @@ def main():
     global ser
     global pending_commands
 
-    debug = False
+    debug = True
     debug_level = 0
-    warning = False
+    warning = True
 
 
     device_re = re.compile(b"Bus\s+(?P<bus>\d+)\s+Device\s+(?P<device>\d+).+ID\s(?P<id>\w+:\w+)\s(?P<tag>.+)$", re.I)
