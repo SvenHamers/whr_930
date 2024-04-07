@@ -939,7 +939,7 @@ def main():
 
     """Connect to the MQTT broker"""
     mqttc = mqtt.Client("whr930")
-    mqttc.username_pw_set(username=data["username"], password="password")
+    mqttc.username_pw_set(username=data["username"], password=data["password"])
 
     """Define the mqtt callbacks"""
     mqttc.on_connect = on_connect
